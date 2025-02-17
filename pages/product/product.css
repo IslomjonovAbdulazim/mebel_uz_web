@@ -164,49 +164,156 @@ header, footer {
   }
 }
 
-/* Footer Phone Numbers */
-.phone-numbers {
+
+/* Footer */
+/* 🏆 Footer Styling */
+.footer {
+  background-color: var(--color-background);
+  color: var(--color-textPrimary);
+  padding: 2rem 0;
+  margin-top: 20px;
+  border-top: 2px solid var(--color-border);
+}
+
+.footer-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 250px;
+  text-align: center;
 }
 
 .phone-number {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: var(--color-primary);
-  text-decoration: none;
-  transition: all 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.6rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.2s ease;
 }
 
+.phone-number img {
+  width: 22px;
+  height: 22px;
+}
+
+/* 🔹 Hover Effect */
 .phone-number:hover {
   color: var(--color-success);
   transform: translateY(-2px);
-  animation: pulse 0.3s ease-in-out;
+}
+.footer-section h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--color-primary);
 }
 
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
-  }
-  100% {
-    transform: scale(1);
-  }
+/* 🔹 Social Icons (Telegram, YouTube, etc.) */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
 }
 
-/* Add this to ensure smooth transitions */
-.phone-number img {
+.social-icons img {
+  width: 40px;
+  height: 40px;
   transition: transform 0.3s ease;
 }
 
-.phone-number:hover img {
-  transform: rotate(10deg);
+.social-icons img:hover {
+  transform: scale(1.1);
+}
+
+/* 🔹 Chat & Location Buttons - FIXED */
+.chat-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Individual Button */
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.4rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: var(--color-primary);
+  border-radius: 24px; /* Smooth pill shape */
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  white-space: nowrap;
+  min-width: 160px;
+}
+
+/* Button Icons */
+.btn img {
+  width: 22px;
+  height: 22px;
+}
+
+/* Hover Effect */
+.btn:hover {
+  background-color: var(--color-success);
+  transform: translateY(-2px);
+}
+
+/* 🔹 Location Section */
+.location p {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.location .btn {
+  margin-top: 0.5rem;
+}
+
+/* 🔹 Bottom Copyright */
+.footer-bottom {
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 20px;
+  font-size: 1rem;
+  background-color: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+}
+
+
+/* ✅ Responsive Footer */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer::before {
+    width: 80%;
+  }
+
+  .chat-links {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 80%;
+    margin: 0 auto;
+  }
 }

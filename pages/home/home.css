@@ -112,68 +112,6 @@
   }
 }
 
-/* BODY */
-/* BODY -> CATEGORY */
-.categories-section {
-  text-align: center;
-  margin-bottom: 2.5rem;
-}
-
-.categories-section h1 {
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--color-primary);
-  margin-bottom: 1.2rem;
-}
-
-.categories {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.2rem; /* Slightly more spacing */
-}
-
-.category-pill {
-  padding: 0.9rem 1.8rem;
-  border: none;
-  border-radius: 32px; /* More rounded pill shape */
-  background-color: #fff; /* Pure white for better contrast */
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--color-primary);
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
-  border: 2px solid var(--color-border);
-}
-
-.category-pill:hover {
-  background-color: var(--color-primary);
-  color: #fff;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
-}
-
-.category-pill.active {
-  background-color: var(--color-primary);
-  color: #fff;
-  border: 2px solid var(--color-primary);
-  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
-}
-
-@media (max-width: 600px) {
-  .categories {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .category-pill {
-    width: 85%;
-    text-align: center;
-  }
-}
-
-
 /* BODY -> BODY */
 #product-list {
   display: grid;
@@ -191,7 +129,7 @@
   text-align: center;
   border: 1px solid var(--color-border);
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   height: 400px;
   display: flex;
   flex-direction: column;
@@ -199,11 +137,21 @@
   cursor: pointer;
 }
 
+.product-card:hover {
+  transform: scale(1.08); /* Increased scale for a better effect */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Improved shadow for depth */
+}
+
 .product-card img {
   width: 100%;
   height: 90%;
   object-fit: cover;
   border-radius: 10px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.product-card img:hover {
+  transform: scale(1.06); /* Increased scale for a better effect */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Improved shadow for depth */
 }
 
 .product-info {
@@ -221,11 +169,6 @@
   font-size: 1.2rem;
   font-weight: 500;
   color: var(--color-textPrimary);
-}
-
-.product-card:hover {
-  transform: scale(1.06);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
 }
 
 @media (max-width: 768px) {

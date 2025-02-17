@@ -177,10 +177,36 @@ header, footer {
   font-weight: 600;
   color: var(--color-primary);
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
 }
 
 .phone-number:hover {
   color: var(--color-success);
   transform: translateY(-2px);
+  animation: pulse 0.3s ease-in-out;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Add this to ensure smooth transitions */
+.phone-number img {
+  transition: transform 0.3s ease;
+}
+
+.phone-number:hover img {
+  transform: rotate(10deg);
 }

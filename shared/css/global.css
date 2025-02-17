@@ -1,0 +1,257 @@
+/* shared/css/global.css */
+@import url('https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&display=swap');
+/* 1. Reset / Normalize (simplified) */
+::selection {
+  background-color: var(--color-primary); /* Match brand color */
+  color: #fff; /* White text for contrast */
+}
+
+/* For Firefox (since it needs a separate rule) */
+::-moz-selection {
+  background-color: var(--color-primary);
+  color: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Clash Display', sans-serif;
+  }
+  
+  /* 2. Base body styles */
+  body {
+    font-family: 'Clash Display', sans-serif;
+    background-color: var(--color-background);
+    color: var(--color-textPrimary);
+    line-height: 1.5;
+    min-height: 100vh; 
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* 3. Container utility (optional) */
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* 4. Basic heading / text spacing */
+  h1, h2, h3, h4 {
+    margin-bottom: 0.5rem;
+    color: var(--color-primary);
+  }
+  
+  p {
+    margin-bottom: 1rem;
+    color: var(--color-textSecondary);
+  }
+  
+  /* 5. Simple responsive media query example */
+  @media (max-width: 768px) {
+    body {
+      font-size: 0.95rem;
+    }
+  }
+  
+  /* Shared Header Component */
+  .topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--color-background);
+    border-bottom: 1px solid var(--color-border);
+    position: relative;
+    z-index: 1000;
+  }
+
+  .logo img {
+    width: 150px;
+    height: auto;
+  }
+
+  .nav-menu {
+    display: flex;
+  }
+
+  .nav-menu ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+  }
+
+  .nav-menu ul li a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    transition: color 0.3s ease;
+  }
+
+  .nav-menu ul li a:hover {
+    color: var(--color-textSecondary);
+  }
+
+  /* Mobile Menu */
+  .menu-icon {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--color-primary);
+  }
+
+  @media (max-width: 768px) {
+    .menu-icon {
+      display: block;
+    }
+
+    .nav-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      width: 90%;
+      background-color: #ffffff;
+      box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+      border-radius: 12px;
+      z-index: 999;
+      padding: 0.5rem 0;
+    }
+
+    .nav-menu.show {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .nav-menu ul {
+      flex-direction: column;
+      align-items: center;
+      padding: 0;
+    }
+
+    .nav-menu ul li {
+      width: 100%;
+      text-align: center;
+      padding: 0.8rem 0;
+    }
+  }
+
+  /* Shared Footer Component */
+  .footer {
+    background-color: var(--color-background);
+    color: var(--color-textPrimary);
+    padding: 2rem 0;
+    margin-top: auto;
+    border-top: 2px solid var(--color-border);
+  }
+
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .footer-section {
+    flex: 1;
+    min-width: 250px;
+    text-align: center;
+  }
+
+  .footer-section h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--color-primary);
+  }
+
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .social-icons img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+  }
+
+  .social-icons img:hover {
+    transform: scale(1.1);
+  }
+
+  .footer-bottom {
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 20px;
+    font-size: 1rem;
+    background-color: var(--color-surface);
+    border-top: 1px solid var(--color-border);
+  }
+
+  /* Shared Button Styles */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.6rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #fff;
+    background-color: var(--color-primary);
+    border-radius: 24px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    min-width: 160px;
+  }
+
+  .btn:hover {
+    background-color: var(--color-success);
+    transform: translateY(-2px);
+  }
+
+  /* Shared Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .fade-in {
+    animation: fadeIn 0.4s ease-out forwards;
+  }
+
+  /* Responsive Container */
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+    }
+    
+    .btn {
+      width: 100%;
+      max-width: 280px;
+    }
+  }
+  

@@ -1,0 +1,339 @@
+/* 🌍 Global Reset */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--color-background);
+    color: var(--color-textPrimary);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 🏆 Header Styling */
+/* HEADER */
+/* 🏆 Header */
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--color-background);
+    border-bottom: 1px solid var(--color-border);
+    position: relative;
+    z-index: 1000;
+  }
+  
+  /* Logo */
+  .logo img {
+    width: 150px;
+    height: auto;
+  }
+  
+  /* Navigation */
+  .nav-menu {
+    display: flex;
+  }
+  
+  .nav-menu ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .nav-menu ul li {
+    display: inline;
+  }
+  
+  .nav-menu ul li a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    transition: color 0.3s ease;
+  }
+  
+  .nav-menu ul li a:hover {
+    color: var(--color-textSecondary);
+  }
+  
+  /* 🏆 Mobile Menu Icon */
+  .menu-icon {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--color-primary);
+  }
+  
+  /* ✅ Mobile Navbar - Improved */
+  @media (max-width: 768px) {
+    .menu-icon {
+      display: block;
+    }
+  
+    /* 🏆 Mobile Dropdown Menu */
+    .nav-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      width: 90%; /* Slightly smaller width */
+      background-color: #ffffff; /* Pure white background */
+      box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+      border-radius: 12px;
+      z-index: 999;
+      padding: 0.5rem 0;
+      transition: all 0.3s ease-in-out;
+    }
+  
+    .nav-menu ul {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0;
+    }
+  
+    .nav-menu ul li {
+      width: 100%;
+      text-align: center;
+      padding: 0.8rem 0; /* Reduced padding */
+    }
+  
+    .nav-menu ul li a {
+      display: block;
+      font-size: 1.2rem;
+      width: 100%;
+      padding: 0.8rem;
+      color: var(--color-primary);
+      text-decoration: none;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+  
+    /* 🏆 Hover Effect */
+    .nav-menu ul li a:hover {
+      background: var(--color-border);
+      color: var(--color-textPrimary);
+    }
+  
+    /* ✅ Show menu when toggled */
+    .nav-menu.show {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  
+
+/* 📌 Full-Screen Main Content with Responsive Padding */
+.container {
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+/* 🗺️ Larger Map */
+.map-container {
+    border-radius: 12px;
+    overflow: hidden;
+    width: 100%;
+    max-width: 1000px;
+    height: 400px;
+    margin: 2rem auto;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 12px;
+}
+
+/* 📞 Phone Number Styling */
+.phone-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    margin: 0.5rem 0;
+}
+
+/* 📞 Phone Number Hover Effect */
+.phone-number:hover {
+    color: var(--color-success);
+    transform: translateY(-2px);
+}
+
+/* 📌 Buttons */
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem 1.6rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #fff;
+    background-color: var(--color-primary);
+    border-radius: 28px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    white-space: nowrap;
+    min-width: 180px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+/* ✅ Button Hover */
+.btn:hover {
+    background-color: var(--color-success);
+    transform: translateY(-2px);
+}
+
+/* 🔹 Social Media Section */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.social-icons img {
+    width: 48px;
+    height: 48px;
+    transition: transform 0.3s ease;
+}
+
+/* Social Icons Hover */
+.social-icons img:hover {
+    transform: scale(1.1);
+}
+
+/* ✅ Footer Styling */
+.footer {
+    background-color: var(--color-background);
+    color: var(--color-textPrimary);
+    padding: 2rem 5%;
+    border-top: 2px solid var(--color-border);
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 280px;
+    text-align: center;
+}
+
+/* Footer Section Titles */
+.footer-section h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--color-primary);
+}
+
+/* Footer Social Icons */
+.footer .social-icons img {
+    width: 44px;
+    height: 44px;
+}
+
+/* 🔹 Bottom Copyright */
+.footer-bottom {
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 1rem;
+    background-color: var(--color-surface);
+    border-top: 1px solid var(--color-border);
+    margin-top: 20px;
+}
+
+/* ✅ Responsive Design */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .header-nav {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .container {
+        width: 95%;
+    }
+
+    .map-container {
+        height: 300px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .btn {
+        width: 100%;
+        max-width: 280px;
+        margin: 0 auto;
+        margin-top: 10px;
+    }
+}
+
+/* ✅ Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.5s ease-in-out forwards;
+}
+
+@keyframes scaleUp {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.scale-up {
+    animation: scaleUp 0.4s ease-in-out forwards;
+}
+
+@keyframes smoothAppear {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.smooth-appear {
+    animation: smoothAppear 0.6s ease-in-out forwards;
+}

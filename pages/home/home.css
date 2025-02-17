@@ -1,0 +1,403 @@
+/* pages/home/home.css */
+
+/* HEADER */
+/* 🏆 Header */
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--color-background);
+  border-bottom: 1px solid var(--color-border);
+  position: relative;
+  z-index: 1000;
+}
+
+/* Logo */
+.logo img {
+  width: 150px;
+  height: auto;
+}
+
+/* Navigation */
+.nav-menu {
+  display: flex;
+}
+
+.nav-menu ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-menu ul li {
+  display: inline;
+}
+
+.nav-menu ul li a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  transition: color 0.3s ease;
+}
+
+.nav-menu ul li a:hover {
+  color: var(--color-textSecondary);
+}
+
+/* 🏆 Mobile Menu Icon */
+.menu-icon {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--color-primary);
+}
+
+/* ✅ Mobile Navbar - Improved */
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+
+  /* 🏆 Mobile Dropdown Menu */
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 90%; /* Slightly smaller width */
+    background-color: #ffffff; /* Pure white background */
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+    z-index: 999;
+    padding: 0.5rem 0;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .nav-menu ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  }
+
+  .nav-menu ul li {
+    width: 100%;
+    text-align: center;
+    padding: 0.8rem 0; /* Reduced padding */
+  }
+
+  .nav-menu ul li a {
+    display: block;
+    font-size: 1.2rem;
+    width: 100%;
+    padding: 0.8rem;
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+
+  /* 🏆 Hover Effect */
+  .nav-menu ul li a:hover {
+    background: var(--color-border);
+    color: var(--color-textPrimary);
+  }
+
+  /* ✅ Show menu when toggled */
+  .nav-menu.show {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* BODY */
+/* BODY -> CATEGORY */
+.categories-section {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.categories-section h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 1.2rem;
+}
+
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.2rem; /* Slightly more spacing */
+}
+
+.category-pill {
+  padding: 0.9rem 1.8rem;
+  border: none;
+  border-radius: 32px; /* More rounded pill shape */
+  background-color: #fff; /* Pure white for better contrast */
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  border: 2px solid var(--color-border);
+}
+
+.category-pill:hover {
+  background-color: var(--color-primary);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+.category-pill.active {
+  background-color: var(--color-primary);
+  color: #fff;
+  border: 2px solid var(--color-primary);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 600px) {
+  .categories {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .category-pill {
+    width: 85%;
+    text-align: center;
+  }
+}
+
+
+/* BODY -> BODY */
+#product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 1rem;
+  justify-content: center;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.product-card {
+  background-color: var(--color-card);
+  border-radius: 16px;
+  padding: 1rem;
+  text-align: center;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.product-card img {
+  width: 100%;
+  height: 90%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.product-info {
+  padding: 0.5rem 0; /* Reduced padding */
+}
+
+.product-info h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 0.2rem;
+}
+
+.product-info .price {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--color-textPrimary);
+}
+
+.product-card:hover {
+  transform: scale(1.06);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 768px) {
+  #product-list {
+    grid-template-columns: 1fr;
+  }
+  
+  .product-card {
+    width: 95%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .categories {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .category-pill {
+    width: 85%;
+  }
+}
+
+/* Footer */
+/* 🏆 Footer Styling */
+.footer {
+  background-color: var(--color-background);
+  color: var(--color-textPrimary);
+  padding: 2rem 0;
+  margin-top: 20px;
+  border-top: 2px solid var(--color-border);
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 250px;
+  text-align: center;
+}
+
+.phone-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.phone-number img {
+  width: 22px;
+  height: 22px;
+}
+
+/* 🔹 Hover Effect */
+.phone-number:hover {
+  color: var(--color-success);
+  transform: translateY(-2px);
+}
+.footer-section h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--color-primary);
+}
+
+/* 🔹 Social Icons (Telegram, YouTube, etc.) */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.social-icons img {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease;
+}
+
+.social-icons img:hover {
+  transform: scale(1.1);
+}
+
+/* 🔹 Chat & Location Buttons - FIXED */
+.chat-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Individual Button */
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.4rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: var(--color-primary);
+  border-radius: 24px; /* Smooth pill shape */
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  white-space: nowrap;
+  min-width: 160px;
+}
+
+/* Button Icons */
+.btn img {
+  width: 22px;
+  height: 22px;
+}
+
+/* Hover Effect */
+.btn:hover {
+  background-color: var(--color-success);
+  transform: translateY(-2px);
+}
+
+/* 🔹 Location Section */
+.location p {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.location .btn {
+  margin-top: 0.5rem;
+}
+
+/* 🔹 Bottom Copyright */
+.footer-bottom {
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 20px;
+  font-size: 1rem;
+  background-color: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+}
+
+
+/* ✅ Responsive Footer */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer::before {
+    width: 80%;
+  }
+
+  .chat-links {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 80%;
+    margin: 0 auto;
+  }
+}

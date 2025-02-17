@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kompaniya Tafsilotlari</title>
+
+    <!-- Global Styles -->
+    <link rel="stylesheet" href="../../shared/css/global.css">
+    <link rel="stylesheet" href="../../shared/css/theme.css">
+
+    <!-- Page-Specific Styles -->
+    <link rel="stylesheet" href="company.css">
+    <link rel="stylesheet" href="companyAnimations.css">
+</head>
+
+<body id="company-page">
+    <!-- Top bar -->
+    <header class="topbar container">
+        <!-- Left: Logo -->
+        <div class="logo">
+            <a href="../home/home.html"><img src="../../assets/logo.png" alt="Kompaniya Logosi"></a>
+        </div>
+
+        <!-- Right: Navigation menu -->
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="../home/home.html">Mahsulotlar</a></li>
+                <li><a href="../company/company.html">Aloqa</a></li>
+            </ul>
+        </nav>
+
+        <!-- Mobile menu icon -->
+        <div class="menu-icon">☰</div>
+    </header>
+
+    <!-- Main content -->
+    <main class="container">
+        <!-- Map container -->
+        <div class="map-container">
+            <iframe id="company-map" src="https://www.google.com/maps?q=41.2995,69.2401&output=embed" allowfullscreen>
+            </iframe>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Left: Contact details -->
+            <div class="footer-section contact">
+                <h3>📞 Aloqa</h3>
+                <a href="tel:+998901234567" class="phone-number">
+                    +998 90 123 45 67
+                </a>
+                <a href="tel:+998931234567" class="phone-number">
+                    +998 93 123 45 67
+                </a>
+            </div>
+
+            <!-- Center: Social media -->
+            <div class="footer-section social">
+                <h3>🌐 Biz bilan bog'laning</h3>
+                <div class="social-icons">
+                    <a href="https://t.me/yourchannel" target="_blank"><img src="../../assets/icons/telegram.png"
+                            alt="Telegram"></a>
+                    <a href="https://www.youtube.com/yourchannel" target="_blank"><img
+                            src="../../assets/icons/youtube.png" alt="YouTube"></a>
+                    <a href="https://www.instagram.com/yourpage" target="_blank"><img
+                            src="../../assets/icons/instagram.png" alt="Instagram"></a>
+                </div>
+                <div class="chat-links">
+                    <a href="https://t.me/yourbot" class="btn">🤖 Telegram Bot</a>
+                    <a href="https://t.me/admin" class="btn">💬 Xabar yuborish</a>
+                </div>
+            </div>
+
+            <!-- Right: Location -->
+            <div class="footer-section location">
+                <h3>📍 Manzil</h3>
+                <p>Toshkent, O'zbekiston</p>
+                <a href="https://goo.gl/maps/example" target="_blank" class="btn">📍 Xaritada ko'rish</a>
+            </div>
+        </div>
+
+        <!-- Footer bottom -->
+        <div class="footer-bottom">
+            <p>&copy; 2025 Mebel. Barcha huquqlar himoyalangan.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script type="module" src="company.js"></script>
+</body>
+
+</html>

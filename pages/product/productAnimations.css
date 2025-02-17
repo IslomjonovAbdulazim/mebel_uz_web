@@ -1,0 +1,47 @@
+/* Animation: Fade In Up */
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(15px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+/* Loading Text */
+.loading {
+  font-size: 1.3rem;
+  color: var(--color-textSecondary);
+  text-align: center;
+  margin-top: 2rem;
+}
+
+/* Error Message */
+.error {
+  color: var(--color-error);
+  font-size: 1.2rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}

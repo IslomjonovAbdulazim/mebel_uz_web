@@ -1,0 +1,186 @@
+/* General Styles */
+header, footer {
+  background: var(--color-surface);
+  padding: 1rem 0;
+  text-align: center;
+  position: relative;
+}
+
+/* Back Button */
+.back-btn {
+  position: absolute;
+  left: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--color-primary);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.back-btn:hover {
+  background: var(--color-border);
+}
+
+/* Product Detail Section */
+.product-detail {
+  background: var(--color-card);
+  border-radius: 12px;
+  padding: 1.5rem;
+  max-width: 900px;
+  margin: 2rem auto;
+}
+
+/* Image Gallery */
+.image-gallery {
+  text-align: center;
+}
+
+.main-image {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+}
+
+.thumbnail-container {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+  justify-content: center;
+}
+
+.thumbnail {
+  width: 75px;
+  height: 75px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.thumbnail:hover {
+  transform: scale(1.1);
+}
+
+/* Product Info */
+.product-info h2 {
+  font-size: 2.2rem;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+/* Price */
+.price {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--color-success);
+  text-align: center;
+}
+
+/* Specifications */
+.specs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin: 1.5rem 0;
+  padding: 1rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.specs-item {
+  text-align: center;
+}
+
+.specs-item strong {
+  display: block;
+  font-size: 1.1rem;
+  color: var(--color-primary);
+}
+
+.specs-item span {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+/* Description */
+.description {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin: 1.5rem 0;
+}
+
+/* Buy Button */
+.buy-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  max-width: 300px;
+  padding: 1rem 1.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: var(--color-primary);
+  border: 0;
+  border-radius: 12px;
+  text-align: center;
+  margin: 20px auto;
+  text-decoration: none;
+  transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+  cursor: pointer;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover Effect */
+.buy-btn:hover {
+  background-color: var(--color-success);
+  transform: scale(1.05);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Click Effect */
+.buy-btn:active {
+  transform: scale(0.98);
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .buy-btn {
+      width: 90%;
+      max-width: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .specs {
+      grid-template-columns: 1fr;
+  }
+
+  .thumbnail {
+      width: 60px;
+      height: 60px;
+  }
+}
+
+/* Footer Phone Numbers */
+.phone-numbers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.phone-number {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.phone-number:hover {
+  color: var(--color-success);
+  transform: translateY(-2px);
+}

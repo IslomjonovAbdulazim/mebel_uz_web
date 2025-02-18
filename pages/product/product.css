@@ -27,7 +27,7 @@ header, footer {
 .product-detail {
   background: var(--color-card);
   border-radius: 12px;
-  padding: 1.5rem;
+  padding: 0rem;
   max-width: 900px;
   margin: 2rem auto;
 }

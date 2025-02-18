@@ -38,7 +38,8 @@ header, footer {
 }
 
 .main-image {
-  width: 100%;
+  width: 70%;
+  height: 50%;
   border-radius: 12px;
   box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
 }
@@ -107,6 +108,7 @@ header, footer {
   font-size: 1.2rem;
   line-height: 1.6;
   margin: 1.5rem 0;
+  text-align: center;
 }
 
 /* Buy Button */

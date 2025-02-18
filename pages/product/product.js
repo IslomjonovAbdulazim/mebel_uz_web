@@ -5,22 +5,22 @@ document.addEventListener('DOMContentLoaded', async () => {
         const item = await fetchFurnitureDetail(1);
         renderProductDetail(item);
     } catch (err) {
-        console.error("Error fetching product:", err);
-        console.warn("Using mock data instead.");
+        console.error("Маҳсулот маълумотларини олишда хатолик юз берди:", err);
+        console.warn("Синов маълумотларидан фойдаланилмоқда.");
 
         const mockFurniture = {
             id: 1,
-            name: "Mountain Landscape Painting",
-            price: 150,
-            description: "A beautiful mountain landscape painting with vibrant colors.".repeat(3),
+            name: "Чиройли Ёғочли Стол",
+            price: 1_500_000,
+            description: "Юқори сифатли ёғочдан ясалган ва мустаҳкам тузилмага эга стол.".repeat(2),
             weight: 2.5,
-            height: 60,
-            width: 40,
-            material: "Leather va Steel",
+            height: 75,
+            width: 120,
+            material: "Ёғоч ва Металл",
             images: [
-                "https://media.istockphoto.com/id/517188688/photo/mountain-landscape.jpg?s=612x612&w=0&k=20&c=A63koPKaCyIwQWOTFBRWXj_PwCrR4cEoOw2S9Q7yVl8=",
-                "https://akshitphotography.com/wp-content/uploads/2021/08/Nature-Photography-105.jpg",
-                "https://resize.indiatvnews.com/en/resize/newbucket/1200_-/2023/06/nature-1686808887.jpg"
+                "https://www.chiltons.com/cdn/shop/products/Table_Shaker_Heirloom_85053.jpg?v=1634308239",
+                "https://woodsala.com/cdn/shop/products/SGHWS0773_4.jpg?v=1613061618",
+                "https://homestyledepot.com.ph/wp-content/uploads/2019/11/Toya-Icons-Sophia-4-seater.jpg"
             ],
         };
 
@@ -34,35 +34,35 @@ function renderProductDetail(item) {
         <div class="image-gallery">
             <img id="main-image" class="main-image" src="${item.images[0]}" alt="${item.name}" />
             <div class="thumbnail-container">
-                ${item.images.map((img, index) => `<img class="thumbnail" src="${img}" data-index="${index}" alt="Thumbnail ${index + 1}">`).join('')}
+                ${item.images.map((img, index) => `<img class="thumbnail" src="${img}" data-index="${index}" alt="Миниатюра ${index + 1}">`).join('')}
             </div>
         </div>
 
         <div class="product-info">
             <h2>${item.name}</h2>
-            <p class="price">${item.price} UZS</p>
+            <p class="price">${item.price.toLocaleString('uz-UZ')} UZS</p>
         </div>
 
         <div class="specs">
-            <div class="specs-item"><strong>Bo'yi</strong> <span>${item.height}cm</span></div>
-            <div class="specs-item"><strong>Eni</strong> <span>${item.width}cm</span></div>
-            <div class="specs-item"><strong>Vazni</strong> <span>${item.weight}kg</span></div>
-            <div class="specs-item"><strong>Material</strong> <span>${item.material}</span></div>
+            <div class="specs-item"><strong>Бўйи:</strong> <span>${item.height} см</span></div>
+            <div class="specs-item"><strong>Эни:</strong> <span>${item.width} см</span></div>
+            <div class="specs-item"><strong>Вазни:</strong> <span>${item.weight} кг</span></div>
+            <div class="specs-item"><strong>Материал:</strong> <span>${item.material}</span></div>
         </div>
 
         <p class="description">${item.description}</p>
 
-        <button id="buy-btn" class="buy-btn">🛒 Xarid qilish</button>
+        <button id="buy-btn" class="buy-btn">🛒 Саватга қўшиш</button>
     `;
 
-    // Handle image selection
+    // Расмни танлашни бошқариш
     document.querySelectorAll('.thumbnail').forEach(img => {
         img.addEventListener('click', (e) => {
             document.getElementById('main-image').src = e.target.src;
         });
     });
 
-    // Handle navigation to company page
+    // Харид қилиш тугмасини бошқариш
     document.getElementById('buy-btn').addEventListener('click', () => {
         window.location.href = "../company/company.html";
     });
